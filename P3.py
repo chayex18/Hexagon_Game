@@ -83,7 +83,6 @@ def player1():
         plt.show()  # Show final state of game
         return 0    # Finish Program
     else:   # If game has not finished
-        input("Press enter to continue ")   # Enter to continue will allow user to control when to go to the next state
         plt.close() # Close window
         player2()   # Go to player two
 
@@ -146,7 +145,7 @@ def minimax(graph, depth, is_maximizing_player): # Function with minimax algorit
 def getPrompt():
     while True: # While it is true
         try:    # Use try to catch if string is inputed
-            prompt = int(input("Please enter a player number (1 or 2): ")) # Get input
+            prompt = int(input("Please enter a player number (1 or 2) - This will be AI player:")) # Get input
             if prompt < 1 or prompt > 2:    # Check if prompts are in correct range
                 print("Please select either 1 or 2")
                 continue
