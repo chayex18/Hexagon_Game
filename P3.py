@@ -119,52 +119,52 @@ def minimax(graph, depth, is_maximizing_player): # Function with minimax algorit
                 if isCondition2(edge1, edge2):  # If conditions are met
                     graph.add_edge(edge1, edge2, weight = 0 )   # Add values to edge
                     value, _, _ = minimax(graph, depth + 1, False)  # Call minimax to return value of nodes
-                    if value > best_value:  # If value is grater than best value (for first iteration negative infinite)
-                        best_value = value  
-                        best_edge1 = edge1
-                        best_edge2 = edge2
-                    graph.remove_edge(edge1, edge2)                    
-        return best_value, best_edge1, best_edge2
-    else:
-        best_value = float('inf')
+                    if value > best_value:  # If value is greater than best value (for first iteration negative infinite)
+                        best_value = value  # Best value equals value
+                        best_edge1 = edge1  # Best_edge1 equals edge1
+                        best_edge2 = edge2  # Best_edge2 equals edge2
+                    graph.remove_edge(edge1, edge2) # Remove the edge from graph                    
+        return best_value, best_edge1, best_edge2   # Return values
+    else:   # Else looking for min
+        best_value = float('inf') # Set to a large value (represents infinity)
         best_edge1 = None
         best_edge2 = None
-        for edge1 in range(1, 7):
+        for edge1 in range(1, 7):   # Look for all possible combinations
             for edge2 in range(edge1 + 1, 7):
-                if isCondition2(edge1, edge2):
-                    graph.add_edge(edge1, edge2, weight = 0)
-                    value, _, _ = minimax(graph, depth + 1, True)
-                    if value < best_value:
-                        best_value = value
-                        best_edge1 = edge1
-                        best_edge2 = edge2
-                    graph.remove_edge(edge1, edge2)
-        return best_value, best_edge1, best_edge2
+                if isCondition2(edge1, edge2):  # If conditions are met
+                    graph.add_edge(edge1, edge2, weight = 0)    # Add the edge 
+                    value, _, _ = minimax(graph, depth + 1, True) # # Call minimax to return value of nodes
+                    if value < best_value:  # If value is smeller than best value (for first iteration positive infinite)
+                        best_value = value  # Best value equals value
+                        best_edge1 = edge1  # Best_edge1 equals edge1
+                        best_edge2 = edge2  # Best_edge2 equals edge2
+                    graph.remove_edge(edge1, edge2) # Remove the edge from graph  
+        return best_value, best_edge1, best_edge2   # Return values
 
 # Prompt the user to select a player number and start the game
 def getPrompt():
-    while True:
-        try:
-            prompt = int(input("Please enter a player number (1 or 2): "))
-            if prompt < 1 or prompt > 2:
+    while True: # While it is true
+        try:    # Use try to catch if string is inputed
+            prompt = int(input("Please enter a player number (1 or 2): ")) # Get input
+            if prompt < 1 or prompt > 2:    # Check if prompts are in correct range
                 print("Please select either 1 or 2")
                 continue
-        except ValueError:
+        except ValueError:  # If string found print failure message
             print("Invalid input. Enter an integer (either 1 or 2)")
         else:
-            return prompt
+            return prompt   # Else return prompt
 
-def main():
-    global playerNum
+def main(): # Main function
+    global playerNum    # Set playerNum and playerNum2 as global
     global playerNum2
-    playerNum = getPrompt()
-    buildGraph()
-    if playerNum == 2:
+    playerNum = getPrompt() # Set playerNum to getPrompt
+    buildGraph()    # Build graph
+    if playerNum == 2:  # If playerNum is two
         playerNum2 = 1
-        player1()
-    else:
+        player1()   # player 1 plays first
+    else:   # Else
         playerNum2 = 2
-        player2()
+        player2()   # player 2 plays first
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # Call main function
     main()
