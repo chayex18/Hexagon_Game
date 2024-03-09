@@ -30,7 +30,8 @@ def printGraph():   # Function to print the Graph
             else:                   # And the AI will be presented as the solid line
                 nx.draw_networkx_edges(graph, pos, edgelist=[(u, v)], width=4.0, alpha=0.5)
     plt.show(block = False) # Show visual representation of graph drawned. Used block = false to make program keep running after graph is displayed
-
+    plt.pause(1)
+    
 def isTriangle(graph, weight):  # Function to check if a triangle was made in the graph
     for u, v in graph.edges():  # Check for all edges in graph
         if graph[u][v]['weight'] == weight: # If the edges have the weight desired
