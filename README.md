@@ -39,7 +39,7 @@ In order to use our implementation, please follow the instructions provided belo
    ![Screenshot 2024-03-06 at 11 14 59 PM](https://github.com/chayex18/Hexagonal_Game/assets/133992144/ea7699c6-f404-41de-af1c-307dd6bda496)
 3. Install library matplotlib: https://pypi.org/project/matplotlib/
    ![Screenshot 2024-03-09 at 12 19 35 PM](https://github.com/chayex18/Hexagonal_Game/assets/133992144/5417075e-a5ff-476c-9b3e-dc10803cd3a0)
-4. After installing python and the mentioned libraries, open the folder where Assignment3.py is located by using Terminal.
+4. After installing python and the mentioned libraries, open the folder where P3.py is located by using Terminal.
 5. Run the program by typing the following line in terminal:
 <img width="169" alt="Screenshot 2024-03-09 at 12 21 53 PM" src="https://github.com/chayex18/Hexagonal_Game/assets/133992144/f7940614-9eec-4e8c-9f59-c8e28fb6ae59">
  
