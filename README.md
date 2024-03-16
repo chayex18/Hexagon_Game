@@ -45,6 +45,6 @@ In order to use our implementation, please follow the instructions provided belo
  
 6. Select the player and enjoy the game. 
 ## Contributors
-- Yeixon Chacon - U24830068
-- Elias Hurtado - U00042456
+- Yeixon Chacon
+- Elias Hurtado 
   
